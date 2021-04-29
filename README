@@ -7,22 +7,25 @@ server
 
 ### Installation script install.pp
 
-This manifest has only goal is to properly install last version of Puppet 5
+This manifest only goal is to properly install last version of Puppet
 components:
 
-* Puppet 5 platform repository (Yum/Apt),
+* Puppet 7 platform repository (Yum/Apt),
 * Puppet Agent and
 * Puppet Server
 
 on current box using instruction from Puppet CE installation manual located on
+
 https://puppet.com/docs/puppet/latest/puppet_platform.html
+
 and on
-https://puppet.com/docs/puppetserver/5.2/install_from_packages.html.
+
+https://puppet.com/docs/puppet/latest/server/install_from_packages.html.
 
 Installation manifest will install r10k, 'production' environment with content
 of this control repo and 'common' environment with Hiera
 
-### First Agent Run
+### Very First Agent Run
 
 Current control repo will setup Puppet Server, PuppetDB, r10k configuration, ENC
 setup (External Node Classifiers), appropriate cron jobs for agent run and

@@ -5,15 +5,10 @@ on CentOS 7 it is:
 
     yum install puppet --disablerepo=* --enablerepo=epel
 
-on CentOS 6 there are no available puppet agent packages (out of the box):
-
-    rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-6.noarch.rpm
-    yum install puppet
-
 2) fork "control-init", "control-enc" and "control-common" into own repositories
 
 3) in new "control-init" replace "common" environment inside r10k.yaml
-with newly forked in point 1). For example:
+with newly forked in step 1). For example:
 
   :common:
     remote: "git@gitlab.company.tld:infra/control-common.git"
@@ -21,11 +16,11 @@ with newly forked in point 1). For example:
 
 3) inside "common" environment in Hiera config data/global.yaml define parameter
 puppet::common_remote with URL to forked repo "control-common" in order to keep
-changes from point 2). For example:
+changes from step 2). For example:
 
 puppet::common_remote: git@gitlab.company.tld:infra/control-common.git
 
-4) define r10k::sources with own environments to deploy on agent run. For
+4) define r10k::sources with own environments to deploy during agent run. For
 example:
 
 r10k::sources:
