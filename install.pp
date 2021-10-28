@@ -118,9 +118,9 @@ class puppet::server::setup (
 {
     require puppet::r10k::install
 
-    exec { "${r10k_path} deploy environment -p":
+    exec { 'environment-setup':
+        command => "${r10k_path} deploy environment -p",
         require => Exec['r10k-installation'],
-        alias   => 'environment-setup',
     }
 }
 
