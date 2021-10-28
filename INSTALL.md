@@ -24,7 +24,9 @@ with newly forked in step 1). For example:
 puppet::common_remote with URL to forked repo `control-common` in order to keep
 changes from step 2). For example:
 
+```
 puppet::common_remote: git@gitlab.company.tld:infra/control-common.git
+```
 
 6) define `r10k::sources` with own environments to deploy during agent run. For
 example:
