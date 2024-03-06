@@ -6,8 +6,6 @@
 class profile::puppet::master (
   String $platform_name = 'puppet8',
 ) {
-  include profile::puppet::deploy
-
   class { 'puppet::profile::puppet':
     platform_name  => $platform_name,
 
@@ -21,9 +19,11 @@ class profile::puppet::master (
 
     use_common_env => true,
 
-    puppetdb_local => false,
-    use_puppetdb   => false,
+    puppetdb_local => true,
+    use_puppetdb   => true,
   }
+
+  include profile::puppet::deploy
 
   Class['profile::puppet::deploy'] -> Class['puppet::profile::puppet']
 }
