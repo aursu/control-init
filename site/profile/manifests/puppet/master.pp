@@ -3,11 +3,13 @@
 # Description
 #     Puppet single host installation (Puppet Agent/Server/PuppetDB)
 #
-class profile::puppet::master {
+class profile::puppet::master (
+  String $platform_name = 'puppet8',
+) {
   include profile::puppet::deploy
 
   class { 'puppet::profile::puppet':
-    platform_name  => 'puppet7',
+    platform_name  => $platform_name,
 
     puppetserver   => true,
     server         => 'puppet',
