@@ -1,37 +1,3 @@
 # Puppet platform installation
 
-### Limitations
-
-After installation Puppet Server, Puppet CA and PuppetDB will reside on the same
-server
-
-### Installation script install.pp
-
-This manifest only goal is to properly install last version of Puppet
-components:
-
-* Puppet 7 platform repository (Yum/Apt),
-* Puppet Agent and
-* Puppet Server
-
-on current box using instruction from Puppet CE installation manual located on
-
-https://puppet.com/docs/puppet/latest/puppet_platform.html
-
-and on
-
-https://puppet.com/docs/puppet/latest/server/install_from_packages.html.
-
-Installation manifest will install r10k, 'production' environment with content
-of this control repo and 'common' environment with Hiera
-
-### Very First Agent Run
-
-Current control repo will setup Puppet Server, PuppetDB, r10k configuration, ENC
-setup (External Node Classifiers), appropriate cron jobs for agent run and
-environments syncronisation using r10k
-
-New installed environments will replace current one and should take care about
-company/infrastructure specific puppet settings.
-
-### See INSTALL for details
+See [Puppet module bootstrap](https://github.com/aursu/puppet-puppet/blob/master/bootstrap/README.md)
