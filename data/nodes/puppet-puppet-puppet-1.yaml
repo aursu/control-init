@@ -1,2 +1,3 @@
 ---
+puppet::profile::puppet::certname: puppet-puppet-puppet-1
 profile::puppet::server::puppetdb_server: puppet-puppet-puppetdb-1
