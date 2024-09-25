@@ -2,7 +2,5 @@ forge 'forge.puppetlabs.com'
 
 mod 'puppet',
   git: 'https://github.com/aursu/puppet-puppet.git',
-  tag: 'v0.19.0'
-mod 'puppetdb',
-  git: 'https://github.com/puppetlabs/puppetlabs-puppetdb.git',
-  tag: '7.14.0'
+  tag: 'v0.21.0'
+mod 'puppetlabs/puppetdb', '8.1.0'
