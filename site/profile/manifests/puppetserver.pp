@@ -9,7 +9,7 @@
 # @param sameca
 #   Whether to use this servers as Puppet CA
 #
-class profile::puppet::server (
+class profile::puppetserver (
   String $platform_name = 'puppet8',
   Boolean $sameca = true,
   Stdlib::Host $ca_server = 'puppet',
